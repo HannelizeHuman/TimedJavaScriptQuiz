@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel= "stylesheet" type="text/css" href="./assets/css/style.css"/>
     <title>JavaScript Timed Quiz</title>
 </head>
 <body>
-  
+  <!-- Nav Bar-->
+  <nav class="navbar fixed-top">
+      <div class="container-fluid">
+        <div id="highscore" class="nav-link nav-item">High Scores</div>
+            <h1 id="navbar-title">JavaScript Timed Quiz</h1>
+            <table id="timer" style="visibility: hidden;">
+                <tr>
+                    <td>Time: </td>
+                    <td><span id="timer" class="nav-item"></span></td>
+                </tr>
+            </table>
+      </div>
+  </nav>
+<!--End Nav Bar-->
+
+<!--Content-->
+<div class="container-fluid">
+    <section id="details"></section>
+    </section>
+</div>
+<!--End Content-->
+
+<!--Footer-->
+<nav class="navbar fixed-bottom footer">
+    <div class="footer-text">By Hannelize Human</div>
+</nav>
+<!--Footer End-->
+
+<!--Script Files-->
     <script src="assets/script/script.js"></script>
 </body>
 </html>
