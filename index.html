@@ -7,33 +7,51 @@
     <link rel= "stylesheet" type="text/css" href="./assets/css/style.css"/>
     <title>JavaScript Timed Quiz</title>
 </head>
+
 <body>
   <!-- Nav Bar-->
   <nav class="navbar fixed-top">
       <div class="container-fluid">
-        <div id="highscore" class="nav-link nav-item">High Scores</div>
-            <h1 id="navbar-title">JavaScript Timed Quiz</h1>
-            <table id="timer" style="visibility: hidden;">
-                <tr>
-                    <td>Time: </td>
-                    <td><span id="timer" class="nav-item"></span></td>
-                </tr>
-            </table>
+
+        <button id="highscore" class="nav-link nav-item">High Scores</button>  
+            <div id="timer" class="timer">
+                <div class="timer">Time: <span id="gameTimer">75</span> sec</div>
+                
+            </div>
       </div>
   </nav>
 <!--End Nav Bar-->
 
-<!--Content-->
-<div class="container-fluid">
+<!--Header-->
+<header>
+    <div class= "large-font">JavaScript Quiz</div>
+    <div class= "description">Answer the following JavaScript questions within the time limit. <br> 
+        Bear in mind that when a question is answered incorrectly, a penalty of minus 10 seconds will occur.</div>
+    <button class="start-button">Start</button>
+  </header>
+<!--Header End-->
+
+<!--Main-->
+<main>
+    <section>
+        <div class="card question" style="visibility: hidden;">
+            <div id="question" class="qtn"></div>
+            <div id="answers" class="ans"></div>
+        </div>
+    </section>
+</main>
+
+<!-- <div class="container-fluid">
     <section id="details"></section>
     </section>
-</div>
+</div> -->
+
 <!--End Content-->
 
 <!--Footer-->
-<nav class="navbar fixed-bottom footer">
+<footer class="fixed-bottom footer">
     <div class="footer-text">By Hannelize Human</div>
-</nav>
+</footer>
 <!--Footer End-->
 
 <!--Script Files-->
