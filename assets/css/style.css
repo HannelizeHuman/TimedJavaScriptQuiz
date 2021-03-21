@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* Universal Selecctor*/
+/* Universal*/
 *{
     margin:0;
     padding: 0;
@@ -32,6 +32,7 @@ button {
   }
 
 /* Nav Bar*/
+
 .container-fluid {
     padding-left: 5%;
     padding-right: 5%;
@@ -53,7 +54,6 @@ button {
     border-bottom-color: #13A9C0;
     width: 100%;
 }
-
 
 .nav-link {
     text-decoration: none;
@@ -78,6 +78,7 @@ button {
 /* Nav Bar end */
 
 /* Header */
+
 header {
     padding: 40px;
     text-align: center;
@@ -100,16 +101,11 @@ header {
     align-items: center;
     text-align:center;
 }
+/* Header End*/
 
 /* Content */
-/* #details {
-    background-color: #13a9c03d;
-    margin-top: 20px;
-    margin-bottom: 80px;
-    padding: 40px;
-} */
-
 /* Main */
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -150,6 +146,13 @@ section {
     padding-top: 30px;
 }
 
+.choice {
+    font-size: 20px;
+    line-height: 1.5rem;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
 /* Main End */
 
 /* Footer */
@@ -167,6 +170,7 @@ section {
     width: 100%;
 }
 
+/* Footer End */
 
 /* Screen */
 
@@ -194,3 +198,5 @@ section {
     .timer {
       height: 50px;
     }
+
+    /* Screen End */
