@@ -15,8 +15,8 @@
       <div class="container-fluid">
 
         <button id="highscore" class="nav-link nav-item">High Scores</button>  
-            <div id="timer" class="timer">
-                <div class="timer">Time: <span id="gameTimer">75</span> sec</div>  
+            <div class="timer">
+                <div class="timer">Time: <span class="gameTimer">75</span> sec</div>  
             </div>
       </div>
   </nav>
@@ -25,12 +25,12 @@
 
 <!--Header-->
 
-<header>
+<header id="intro">
     <div class= "large-font">JavaScript Quiz</div>
     <div class= "description">Answer the following JavaScript questions within the time limit. <br> 
         Bear in mind that when a question is answered incorrectly, a penalty of minus 10 seconds will occur.
     </div>
-    <button id="start" class="start-button">Start</button>
+    <button id="start" type="button" class="start-button">Start</button>
   </header>
 
 <!--Header End-->
@@ -44,9 +44,9 @@
             <div id="question" class="qtn"><p></p></div>
             <div id="answers" class="ans">
                 <ul class="nobullets">
-                    <li class="choice"><button id="A">A. </button></li>
-                    <li class="choice"><button id="B">B. </button></li> 
-                    <li class="choice"><button id="C">C. </button></li> 
+                    <li class="choice"><button id="A" type="button">A. </button></li>
+                    <li class="choice"><button id="B" type="button">B. </button></li> 
+                    <li class="choice"><button id="C" type="button">C. </button></li> 
                 </ul>
                 <div id="result">
                     <hr>
@@ -60,7 +60,7 @@
         <div>
             <h2>Finished!</h2>
             <p>You scored: <span id="score"></span></p>
-            <p>Enter Name: <span><input placeholder="name" id="name"/></span>
+            <p>Enter Name: <span><input placeholder="Name" id="name"/></span>
             <br>
             <button id="submitScore">Submit</button>
             </p>
