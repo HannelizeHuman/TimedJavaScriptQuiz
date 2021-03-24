@@ -71,7 +71,7 @@ button {
     color: #fff;
 }
 
-#gameTimer {
+.gameTimer {
     font-size: 30px;
 }
 
