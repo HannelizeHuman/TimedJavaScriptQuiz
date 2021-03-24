@@ -1,53 +1,96 @@
-// select all elements
-const start = document.getElementById("start");
-const quiz = document.getElementById("quiz");
-const question = document.getElementById("question");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
-const timer = document.getElementById("timer");
-const gameTimer = document.getElementById("gameTimer");
+// Variables selection for elements
+// Time and score
+let time = document.querySelector("p.time");
+let secondsLeft = 75;
+let score = document.querySelector("#score");
 
-// create our questions
+// Sections
+// Intro
+const intro = document.querySelector("#intro");
+
+// Questions
+const questions = document.querySelector("#questions");
+// Placement of question
+let question = document.querySelector("#question");
+// Question count
+let questionCount = 0;
+// Question result (wrong/correct)
+const result = document.querySelector("#result");
+
+// Scores and Inputs
+const inputName = document.querySelector("#inputName");
+// Player Name Input
+let nameInput = document.querySelector("#name");
+
+// High Scores
+const highScores = document.querySelector("#highScores");
+// List of Scores
+const scoreList = document.querySelector("#scoreList");
+// Convert scores into array
+let listOfScores = [];
+
+// Buttons
+//Start
+const startButton = document.querySelector("#start");
+// Answer button class
+const answerButton = document.querySelector("ans");
+// Answer A
+const answerA = document.querySelector("#A");
+// Answer B
+const answerB = document.querySelector("#B");
+// Answer C
+const answerC = document.querySelector("#C");
+
+// Score Submit
+const submitScore = document.querySelector("#submitScore");
+// Return
+const returnMainPage = document.querySelector("#return");
+// View High Scores
+const viewHighscores = document.querySelector("#highScores");
+
+
+// Object for Questions & Answers
+
 const questions = [
     {
+        // Question 0
         question: "JavaScript is an ECMAScript.",
         answers: [ "A. True", "B. False", "C. Both"],
         correctAnswer: "A"
     },
     {
+        // Question 1
         question: "JavaScript is written under which tag?",
         answers: [ "A. <javascript></javascript>", "B. <script></script>", "C. <code></code>"],
         correctAnswer: "B"
     },
     {
+        // Question 2
         question : "JavaScript variable is declaired with which key word?",
         answers: [ "A. new", "B. string", "C. var"],
         correctAnswer: "C"
     },
     {
+        // Question 3
         question : "Which of the following are primitive data types in JavaScript?",
         answers: [ "A. String", "B. Boolean", "C. All of the above"],
         correctAnswer: "C"
     },
     {
-        question : "What does null mean in JavaScript?",
-        answers: [ "A. Null means empty string value.", "B. Null means the absence of a value.", "C. Null means unknown value."],
-        correctAnswer: "C"
-    },
-    {
+        // Question 4  
         question : "What is eval() in JavaScript?",
         answers: [ "A. It executes a specified string as JavaScript code.", "B. Displays a pop-up message.", "C. Executes server side code in JavaScript."],
         correctAnswer: "A"
     },
     {
+        // Question 5
         question : "A variable declaired without a var keyword inside a function will become ____?",
         answers: [ "A. local", "B. global", "C. undefined"],
         correctAnswer: "B"
     }
 ];
 
-// create some variables
+// Functions
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
