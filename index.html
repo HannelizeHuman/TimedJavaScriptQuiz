@@ -28,7 +28,8 @@
 <header>
     <div class= "large-font">JavaScript Quiz</div>
     <div class= "description">Answer the following JavaScript questions within the time limit. <br> 
-        Bear in mind that when a question is answered incorrectly, a penalty of minus 10 seconds will occur.</div>
+        Bear in mind that when a question is answered incorrectly, a penalty of minus 10 seconds will occur.
+    </div>
     <button id="start" class="start-button">Start</button>
   </header>
 
@@ -37,16 +38,49 @@
 <!--Main-->
 
 <main>
-    <section>
-        <div id="quiz" class="card question" style="visibility: hidden">
+    <!--Question Box-->
+    <section id="questions">
+        <div id="quiz" class="card question">
             <div id="question" class="qtn"><p></p></div>
             <div id="answers" class="ans">
-                <div class="choice" id="A" onclick="checkAnswer('A')">A. </div>
-                <div class="choice" id="B" onclick="checkAnswer('B')">B. </div>
-                <div class="choice" id="C" onclick="checkAnswer('C')">C. </div>
+                <ul class="nobullets">
+                    <li class="choice"><button id="A">A. </button></li>
+                    <li class="choice"><button id="B">B. </button></li> 
+                    <li class="choice"><button id="C">C. </button></li> 
+                </ul>
+                <div id="result">
+                    <hr>
+                </div>
             </div>
         </div>
     </section>
+
+    <!--Score and Name Input-->
+    <section id="inputName" class="inputName">
+        <div>
+            <h2>Finished!</h2>
+            <p>You scored: <span id="score"></span></p>
+            <p>Enter Name: <span><input placeholder="name" id="name"/></span>
+            <br>
+            <button id="submitScore">Submit</button>
+            </p>
+        </div>
+    </section>
+
+    <!-- High Scores -->
+    <section id="highScores">
+        <div>
+            <div class="highScores">
+                <h2>High Scores</h2>
+                <ol id="scoreList">
+
+                </ol>
+                <button id="return">Return to main page</button>
+            </div>
+        </div>
+
+    </section>
+
 </main>
 
 <!--End Content-->
