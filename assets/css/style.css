@@ -175,6 +175,13 @@ section {
 
 /* Main End */
 
+/* Hide */
+#questions,
+#inputName,
+#highScores {
+    display: none;
+}
+
 /* Footer */
 
 .footer {
