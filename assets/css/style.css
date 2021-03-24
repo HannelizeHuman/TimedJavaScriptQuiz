@@ -14,7 +14,7 @@ html {
 }
 
 button {
-    background: radial-gradient(circle, #13A9C0 0%, #03191d 100%);
+    background: radial-gradient(circle, #13A9C0 0%, #09424b 100%);
     border-radius: 8px;
     color: #ffffff;
     cursor: pointer;
@@ -120,6 +120,7 @@ section {
     border-radius: 8px;
 }
 
+/* Question */
 .question {
     width: 55vw;
     height: 400px;
@@ -132,6 +133,7 @@ section {
     box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
     margin: auto;
     padding: 20px;
+    padding-bottom: 20px;
 }
 
 .qtn {
@@ -153,11 +155,32 @@ section {
     padding-top: 30px;
 }
 
+.nobullets{
+    list-style: none;
+}
+
+/* Name Input */
+.inputName {
+    padding-left: 0;
+    text-align: center;
+    color: #03191d;
+}
+
+/* High Scores */
+.highScores {
+    padding-left: 0;
+    text-align: center;
+    color: #03191d;
+}
+
 /* Main End */
 
 /* Footer */
 
 .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     font-size: 12px;
     text-align: center;
     background-color: #03191d;
