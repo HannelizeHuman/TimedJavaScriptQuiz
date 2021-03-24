@@ -96,7 +96,7 @@ const questions = [
 function setTime() {
     let timeInterval = setInterval(function() {
         secondsLeft--;
-        time.textContent = 'Time:$(secondsLeft}';
+        time.textContent = `Time:$(secondsLeft}`;
 
         if (secondsLeft === 0 || questionCount === questions.length) {
             clearInterval(timerInterval);
@@ -107,7 +107,7 @@ function setTime() {
     }, 1000);
 }
 
-// Quiz Start: Timer and Queastions
+// Quiz Start: Timer and Questions
 function startQuiz() {
     intro.style.display = "none";
     questions.style.display = "block";
@@ -146,6 +146,36 @@ function checkAnswer (event) {
 
     // Call to bring in next question when answer button is clicked
     setQuestion(questionCount);
+}
+
+function addScore(event) {
+    event.preventDefault();
+
+    inputName.style.display = "none";
+    highScores.style.display = "block";
+
+    let init = nameInput.value.toUpperCase();
+    listOfScores.push({initials: init, score: secondsLeft});
+
+    // Sort Scores
+    listOfScores = listOfScores.sort((a, b) => {
+        if (a.score < b.score) {
+            return 1:
+        } else {
+            result -1;
+        }
+    });
+
+    scoreList.innerHTML="";
+    for (let i = 0; i < listOfScores.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `&{listOfScores[i].initials}: ${listOfScores[i].score}`
+        scoreList.append(li);
+    }
+
+    // Add scores to local storage
+    storeScores();
+    displayScores();
 }
 
 
