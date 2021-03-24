@@ -92,6 +92,22 @@ const questions = [
 
 // Functions
 
+// Timer
+function setTime() {
+    let timeInterval = setInterval(function() {
+        secondsLeft--;
+        time.textContent = 'Time:$(secondsLeft}';
+
+        if (secondsLeft === 0 || questionCount === questions.length) {
+            clearInterval(timerInterval);
+            questions.style.display = "none";
+            inputName.style.display = "block";
+            score.textContent = secondsLeft;
+        }
+    }, 1000);
+}
+
+
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
