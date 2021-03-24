@@ -107,105 +107,45 @@ function setTime() {
     }, 1000);
 }
 
+// Quiz Start: Timer and Queastions
+function startQuiz() {
+    intro.style.display = "none";
+    questions.style.display = "block";
+    questionCount = 0;
 
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-let count = 0;
-
-// const gaugeWidth = 150; // 150px
-// const gaugeUnit = gaugeWidth / questionTime;
-// let TIMER;
-// let score = 0;
-
-// render a question
-function renderQuestion(){
-    let q = questions[runningQuestion];
-    
-    question.innerHTML = "<p>"+ q.question +"</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    setTime();
+    setQuestion(questionCount);
 }
 
-start.addEventListener("click",startQuiz);
+// Answer check
+function checkAnswer (event) {
+    event.preventDefault();
 
-// start quiz
-function startQuiz(){
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
-}
+    // Result message
+    result.style.display = "block";
+    let p = document.createElement("p");
+    result.appendChild(p);
 
-// render progress
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    // Message time out
+    setTimeout(function() {
+        p.style.display = 'none';
+    },1000);
+
+    // Answer Check
+    if (question[questionCount].correctAnswer === event.target.value) {
+        p.textContent = "Correct";
+    } else if (questions[questionCount].correctAnswer !== event.target.value) {
+        secondsLeft = secondsLeft - 10;
+        p.textContent = "Incorrect":
     }
-}
 
-// counter render
-
-function renderCounter(){
-    if(count <= questionTime){
-        counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
-        count++
-    }else{
-        count = 0;
-        // change progress color to red
-        answerIsWrong();
-        if(runningQuestion < lastQuestion){
-            runningQuestion++;
-            renderQuestion();
-        }else{
-            // end the quiz and show the score
-            clearInterval(TIMER);
-            scoreRender();
-        }
+    // Increse question index with increment
+    if (questionCount < questions.length) {
+        questionCount++;
     }
+
+    // Call to bring in next question when answer button is clicked
+    setQuestion(questionCount);
 }
 
-// checkAnwer
 
-function checkAnswer(answer){
-    if( answer == questions[runningQuestion].correct){
-        // answer is correct
-        score++;
-        // change progress color to green
-        answerIsCorrect();
-    }else{
-        // answer is wrong
-        // change progress color to red
-        answerIsWrong();
-    }
-    count = 0;
-    if(runningQuestion < lastQuestion){
-        runningQuestion++;
-        renderQuestion();
-    }else{
-        // end the quiz and show the score
-        clearInterval(TIMER);
-        scoreRender();
-    }
-}
-
-// answer is correct
-function answerIsCorrect(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
-}
-
-// answer is Wrong
-function answerIsWrong(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
-}
-
-// score render
-function scoreRender(){
-    scoreDiv.style.display = "block";
-    
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score/questions.length);
-    
