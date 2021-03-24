@@ -9,49 +9,41 @@ const timer = document.getElementById("timer");
 const gameTimer = document.getElementById("gameTimer");
 
 // create our questions
-let questions = [
+const questions = [
     {
-        question : "JavaScript is an ECMAScript.",
-        choiceA : "True",
-        choiceB : "False",
-        choiceC : "Both",
-        correct : "A"
-    },{
-        question : "JavaScript is written under which tag?",
-        choiceA : "<javascript></javascript>",
-        choiceB : "<script></script>",
-        choiceC : "<code></code>",
-        correct : "B"
-    },{
+        question: "JavaScript is an ECMAScript.",
+        answers: [ "A. True", "B. False", "C. Both"],
+        correctAnswer: "A"
+    },
+    {
+        question: "JavaScript is written under which tag?",
+        answers: [ "A. <javascript></javascript>", "B. <script></script>", "C. <code></code>"],
+        correctAnswer: "B"
+    },
+    {
         question : "JavaScript variable is declaired with which key word?",
-        choiceA : "new",
-        choiceB : "string",
-        choiceC : "var",
-        correct : "C"
-    },{
+        answers: [ "A. new", "B. string", "C. var"],
+        correctAnswer: "C"
+    },
+    {
         question : "Which of the following are primitive data types in JavaScript?",
-        choiceA : "String",
-        choiceB : "Boolean",
-        choiceC : "All of the above",
-        correct : "C"
-    },{
+        answers: [ "A. String", "B. Boolean", "C. All of the above"],
+        correctAnswer: "C"
+    },
+    {
         question : "What does null mean in JavaScript?",
-        choiceA : "Null means empty string value.",
-        choiceB : "Null means the absence of a value.",
-        choiceC : "Null means unknown value.",
-        correct : "C"
-    },{
+        answers: [ "A. Null means empty string value.", "B. Null means the absence of a value.", "C. Null means unknown value."],
+        correctAnswer: "C"
+    },
+    {
         question : "What is eval() in JavaScript?",
-        choiceA : "It executes a specified string as JavaScript code.",
-        choiceB : "Displays a pop-up message.",
-        choiceC : "Executes server side code in JavaScript.",
-        correct : "A"
-    },{
+        answers: [ "A. It executes a specified string as JavaScript code.", "B. Displays a pop-up message.", "C. Executes server side code in JavaScript."],
+        correctAnswer: "A"
+    },
+    {
         question : "A variable declaired without a var keyword inside a function will become ____?",
-        choiceA : "local",
-        choiceB : "global",
-        choiceC : "undefined",
-        correct : "B"
+        answers: [ "A. local", "B. global", "C. undefined"],
+        correctAnswer: "B"
     }
 ];
 
@@ -61,10 +53,10 @@ const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
 
-const gaugeWidth = 150; // 150px
-const gaugeUnit = gaugeWidth / questionTime;
-let TIMER;
-let score = 0;
+// const gaugeWidth = 150; // 150px
+// const gaugeUnit = gaugeWidth / questionTime;
+// let TIMER;
+// let score = 0;
 
 // render a question
 function renderQuestion(){
