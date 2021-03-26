@@ -14,6 +14,8 @@ The aim of this assignment was to build a timed JavaScript code quiz, consisting
 
 # Guide and Info on how the quiz works
 
+![Start game](assets\Images\Quiz.png)
+
 
     Click "Start"
 
@@ -39,7 +41,7 @@ The aim of this assignment was to build a timed JavaScript code quiz, consisting
     JavaScript
 
 # Links
-    GitHub Repo:
+    GitHub Repo: https://github.com/HannelizeHuman/TimedJavaScriptQuiz
     Deployed Site:
 
 

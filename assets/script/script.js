@@ -109,8 +109,14 @@ function setTime() {
     }, 1000);
 }
 
+function clearcontent() {
+    document.getElementById("questionSection").innerHTML = "";
+}
+
 // Quiz Start: Timer and Questions
 function startQuiz() {
+    clearcontent;
+    sessionStorage.clear();
     intro.style.display = "none";
     questionSection.style.display = "block";
     questionCount = 0;
@@ -169,6 +175,7 @@ function checkAnswer (event) {
 
     // Call to bring in next question when answer button is clicked
     setQuestion(questionCount);
+
 }
 
 function addScore(event) {
@@ -216,10 +223,7 @@ function displayScores() {
 }
 
 // Clear Scores
-// function clearScores() {
-//     localStorage.clear();
-//     scoreList.innerHTML="";
-// }
+
 
 // EventListeners
 // Start timer and display first question
