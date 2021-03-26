@@ -119,7 +119,7 @@ function startQuiz() {
     setQuestion(questionCount);
 }
 
-// Function for Multiple chouce queastions
+// Function for Multiple choice queastions
 function setQuestion(id) {
     if (id < questions.length) {
         var p = document.createElement("p");
