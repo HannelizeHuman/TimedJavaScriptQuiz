@@ -179,6 +179,10 @@ section {
     color: #03191d;
 }
 
+#scoreList {
+    list-style: none;
+}
+
 /* Main End */
 
 /* Hide */
