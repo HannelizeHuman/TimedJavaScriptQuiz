@@ -1,6 +1,6 @@
 // Variables selection for elements
 // Time and score
-let time = document.querySelector("p.time");
+let time = document.querySelector(".gameTimer");
 let secondsLeft = 75;
 let score = document.querySelector("#score");
 
@@ -33,7 +33,7 @@ let listOfScores = [];
 //Start
 const startButton = document.querySelector("#start");
 // Answer button class
-const answerButton = document.querySelector("ans");
+const answerButton = document.querySelector(".ans");
 // Answer A
 const answerA = document.querySelector("#A");
 // Answer B
@@ -96,7 +96,7 @@ const questions = [
 function setTime() {
     let timeInterval = setInterval(function() {
         secondsLeft--;
-        time.textContent = `Time:$(secondsLeft}`;
+        time.textContent = `Time:${secondsLeft}`;
 
         if (secondsLeft === 0 || questionCount === questions.length) {
             clearInterval(timerInterval);
@@ -120,10 +120,21 @@ function startQuiz() {
 // Function for Multiple chouce queastions
 function setQuestion(id) {
     if (id < questions.length) {
-        questionSection.textContent = questions[id].question;
-        answerA.textContent = questions[id].answers[0];
+        var p = document.createElement("p");
+        p.textContent = questions[id].question;
+        document.getElementById("q").appendChild(p);
+        for(var i=0;i<questions[id].answers.length;i++)
+        {
+            var btn = document.createElement("button");
+            btn.textContent = questions[id].answers[i];
+            btn.classList.add("answers");
+            btn.addEventListener("click", checkAnswer);
+            document.getElementById("q").appendChild(btn);
+        }
+        
+        /*answerA.textContent = questions[id].answers[0];
         answerB.textContent = questions[id].answers[1];
-        answerC.textContent = questions[id].answers[2];
+        answerC.textContent = questions[id].answers[2];*/
     }
 }
 
@@ -212,10 +223,10 @@ function displayScores() {
 // Start timer and display first question
 startButton.addEventListener("click", startQuiz);
 
-// Answer loop
-answerButton.forEach(item => {
-    item.addEventListener('click', checkAnswer);
-});
+// // Answer loop
+// answerButton.forEach(item => {
+//     item.addEventListener('click', checkAnswer);
+// });
 
 // Add Score
 submitScore.addEventListener("click", addScore);
