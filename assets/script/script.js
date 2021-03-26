@@ -9,7 +9,8 @@ let score = document.querySelector("#score");
 const intro = document.querySelector("#intro");
 
 // Questions
-const questionSection = document.querySelector("#questionSection");
+// const questionSection = document.querySelector("#questionSection");
+const questionSection = document.querySelector("#q");
 // Placement of question
 let question = document.querySelector("#question");
 // Question count
@@ -55,38 +56,38 @@ const questions = [
     {
         // Question 0
         question: "JavaScript is an ECMAScript.",
-        answers: [ "A. True", "B. False", "C. Both"],
-        correctAnswer: "A"
+        answers: ["A. True", "B. False", "C. Both"],
+        correctAnswer: "A. True"
     },
     {
         // Question 1
         question: "JavaScript is written under which tag?",
         answers: [ "A. <javascript></javascript>", "B. <script></script>", "C. <code></code>"],
-        correctAnswer: "B"
+        correctAnswer: "B. <script></script>"
     },
     {
         // Question 2
         question : "JavaScript variable is declaired with which key word?",
         answers: [ "A. new", "B. string", "C. var"],
-        correctAnswer: "C"
+        correctAnswer: "C. var"
     },
     {
         // Question 3
         question : "Which of the following are primitive data types in JavaScript?",
         answers: [ "A. String", "B. Boolean", "C. All of the above"],
-        correctAnswer: "C"
+        correctAnswer: "C. All of the above"
     },
     {
         // Question 4  
         question : "What is eval() in JavaScript?",
         answers: [ "A. It executes a specified string as JavaScript code.", "B. Displays a pop-up message.", "C. Executes server side code in JavaScript."],
-        correctAnswer: "A"
+        correctAnswer: "A. It executes a specified string as JavaScript code."
     },
     {
         // Question 5
         question : "A variable declaired without a var keyword inside a function will become ____?",
         answers: [ "A. local", "B. global", "C. undefined"],
-        correctAnswer: "B"
+        correctAnswer: "B. global"
     }
 ];
 
@@ -97,9 +98,10 @@ function setTime() {
     let timeInterval = setInterval(function() {
         secondsLeft--;
         time.textContent = `Time:${secondsLeft}`;
+        console.log(secondsLeft)
 
         if (secondsLeft === 0 || questionCount === questions.length) {
-            clearInterval(timerInterval);
+            clearInterval(timeInterval);
             questionSection.style.display = "none";
             inputName.style.display = "block";
             score.textContent = secondsLeft;
@@ -153,9 +155,9 @@ function checkAnswer (event) {
     },1000);
 
     // Answer Check
-    if (questions[questionCount].correctAnswer === event.target.value) {
+    if (questions[questionCount].correctAnswer === event.target.innerHTML) {
         p.textContent = "Correct";
-    } else if (questions[questionCount].correctAnswer !== event.target.value) {
+    } else if (questions[questionCount].correctAnswer !== event.target.innerHTML) {
         secondsLeft = secondsLeft - 10;
         p.textContent = "Incorrect";
     }
@@ -190,7 +192,7 @@ function addScore(event) {
     scoreList.innerHTML="";
     for (let i = 0; i < listOfScores.length; i++) {
         let li = document.createElement("li");
-        li.textContent = `&{listOfScores[i].initials}: ${listOfScores[i].score}`
+        li.textContent = `${listOfScores[i].initials}: ${listOfScores[i].score}`
         scoreList.append(li);
     }
 
