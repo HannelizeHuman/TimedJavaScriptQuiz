@@ -41,8 +41,9 @@ The aim of this assignment was to build a timed JavaScript code quiz, consisting
     JavaScript
 
 # Links
-    GitHub Repo: https://github.com/HannelizeHuman/TimedJavaScriptQuiz
-    Deployed Site: https://hannelizehuman.github.io/TimedJavaScriptQuiz/
+GitHub Repo: https://github.com/HannelizeHuman/TimedJavaScriptQuiz
+
+Deployed Site: https://hannelizehuman.github.io/TimedJavaScriptQuiz/
 
 
     
